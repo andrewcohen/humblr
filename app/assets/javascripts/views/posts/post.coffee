@@ -1,5 +1,5 @@
 class Humblr.Views.Post extends Backbone.View
-  el: "#post"
+  el: "#content"
   template: JST['posts/show']
 
   render: ->

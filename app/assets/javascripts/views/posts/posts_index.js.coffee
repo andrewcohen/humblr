@@ -1,13 +1,15 @@
 class Humblr.Views.PostsIndex extends Backbone.View
-  el: "#sidebar"
+  el: "#posts_list"
+  tagName: 'li'
   template: JST['posts/index']
 
   events:
     "click #refresh_posts": "refresh"
+    "click #new_post": "newPost"
     "click a": "viewPost"
 
   initialize: ->
-    @collection = new Humblr.Collections.Posts
+    @collection = Humblr.Posts = new Humblr.Collections.Posts
     @listenTo(@collection, 'all', @render)
     @collection.fetch()
 
@@ -18,6 +20,10 @@ class Humblr.Views.PostsIndex extends Backbone.View
   refresh: ->
     @collection.fetch()
     @render()
+
+  newPost: ->
+    view = new Humblr.Views.NewPost()
+    view.render()
 
   viewPost: (e) ->
     e.preventDefault()

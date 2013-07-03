@@ -1,3 +1,4 @@
+<button id="new_post">New Post</button>
 <button id="refresh_posts">Refresh</button>
 <ul>
   <% @posts.each (post) ->: %>

@@ -1,0 +1,16 @@
+<h4>Create a new post</h4>
+<form action="/posts" method="post">
+  <fieldset>
+    <label>Title</label>
+    <input type="text" name="Title" id="title"/>
+  </fieldset>
+  <fieldset>
+    <label>Author</label>
+    <input type="text" name="Author" id="author"/>
+  </fieldset>
+  <fieldset>
+    <label>Body</label>
+    <textarea name="Body" id="post_body" rows="40" cols="80"></textarea>
+  </fieldset>
+  <button type="submit" id="submit_post">Post</button>
+</form>
