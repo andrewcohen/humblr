@@ -1,0 +1,11 @@
+<button id="refresh_posts">Refresh</button>
+<ul>
+  <% @posts.each (post) ->: %>
+    <li>
+      <a href="#" data-id="<%= post.escape('id') %>">
+        <%= post.escape('title') %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
