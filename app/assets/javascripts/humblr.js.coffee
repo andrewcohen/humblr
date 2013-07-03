@@ -4,14 +4,8 @@ window.Humblr =
   Views: {}
   Routers: {}
   initialize: ->
-    Backbone.old_sync = Backbone.sync
-    Backbone.sync = (method, model, options) ->
-      new_opts = _.extend(
-        beforeSend: (xhr) ->
-          token = $('meta[name="csrf-token"]').attr('content')
-          xhr.setRequestHeader('X-CSRF-Token', token)
-      , options)
-      Backbone.old_sync(method, model, new_opts)
+    Humblr.router = new Humblr.Routers.Posts()
+    Backbone.history.start(pushState: true)
     new Humblr.Views.PostsIndex()
 
 $(document).ready ->

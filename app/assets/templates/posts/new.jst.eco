@@ -9,7 +9,7 @@
     <input type="text" name="Author" id="author"/>
   </fieldset>
   <fieldset>
-    <label>Body</label>
+    <label>Body</label> <br />
     <textarea name="Body" id="post_body" rows="40" cols="80"></textarea>
   </fieldset>
   <button type="submit" id="submit_post">Post</button>
