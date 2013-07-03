@@ -6,7 +6,6 @@ class Humblr.Views.NewPost extends Backbone.View
     "click #submit_post": "submitPost"
 
   render: ->
-    console.log 'new post form'
     this.$el.html(@template)
     @
 
